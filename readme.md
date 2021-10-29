@@ -131,15 +131,15 @@ net/ipv4/ip_forward=1
 After that, we add this to the before.rules file in /etc/ufw just under the header comments:
 
 
- # nat Table rules
- *nat
- :POSTROUTING ACCEPT [0:0]
- 
- #Forward traffic from ens39 through ens33
- -A POSTROUTING -s 10.0.0.0/24 -o ens33 -j MASQUERADE
- 
- #don't delete the 'COMMIT' line or these nat Table rules won't be processed
- COMMIT
+> # nat Table rules
+> nat
+> :POSTROUTING ACCEPT [0:0]
+> 
+> #Forward traffic from ens39 through ens33
+> -A POSTROUTING -s 10.0.0.0/24 -o ens33 -j MASQUERADE
+> 
+> #don't delete the 'COMMIT' line or these nat Table rules won't be processed
+> COMMIT
 
 
 The subnet will be of your Internal network and ens33 will be replaced by the name of you NIC facing your ISP
