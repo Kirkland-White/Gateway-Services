@@ -1,4 +1,4 @@
-###### Gateway Documentation
+# Gateway Documentation
 This document will contain instructions on how to create a network appliance with an Ubuntu Server.
 Our network topology consists of a client, the network appliance we built running Ubuntu Server with 2 NICs (one for the internal network and one for external),
 and a connection to our ISP. The network appliance provides DNS services, DHCP services, Firewall Services and Proxy services.
@@ -12,7 +12,7 @@ The format of this document is as follows:
 - Firewall Setup
 - Proxy Server Setup
 
-#### DNS Server Setup
+### DNS Server Setup
 
 To start, install the DNS software bind9 to your server by typing this command
 
@@ -67,7 +67,7 @@ sudo systemctl restart bind9.service
 
 
 
-#### DHCP Server Setup
+### DHCP Server Setup
 
 To start, install isc-dhcp-server using this command:
 
@@ -99,7 +99,7 @@ sudo service isc-dhcp-server restart
 
 Your DHCP server should be active.
 
-#### Firewall Setup
+### Firewall Setup
 
 Ubuntu Server comes with the default Firewall configuration tool called ufw. ufw is designed to make firewall rules easier to implement into ip tables.
 
@@ -131,15 +131,15 @@ net/ipv4/ip_forward=1
 After that, we add this to the before.rules file in /etc/ufw just under the header comments:
 
 
-# nat Table rules
-*nat
-:POSTROUTING ACCEPT [0:0]
-
-#Forward traffic from ens39 through ens33
--A POSTROUTING -s 10.0.0.0/24 -o ens33 -j MASQUERADE
-
-#don't delete the 'COMMIT' line or these nat Table rules won't be processed
-COMMIT
+ # nat Table rules
+ *nat
+ :POSTROUTING ACCEPT [0:0]
+ 
+ #Forward traffic from ens39 through ens33
+ -A POSTROUTING -s 10.0.0.0/24 -o ens33 -j MASQUERADE
+ 
+ #don't delete the 'COMMIT' line or these nat Table rules won't be processed
+ COMMIT
 
 
 The subnet will be of your Internal network and ens33 will be replaced by the name of you NIC facing your ISP
