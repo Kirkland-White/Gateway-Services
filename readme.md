@@ -131,7 +131,6 @@ net/ipv4/ip_forward=1
 After that, we add this to the before.rules file in /etc/ufw just under the header comments:
 
 
-</># nat Table rules
 nat
 :POSTROUTING ACCEPT [0:0]
 
