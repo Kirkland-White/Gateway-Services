@@ -1,0 +1,17 @@
+;
+; BIND data file for sysninja.
+;
+$TTL	604800
+@	IN	SOA	sysninja. root.sysninja. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	ns.sysninja.
+@	IN	A	10.43.233.243
+@	IN	AAAA	::1
+ns	IN	A	10.43.233.243
+*	IN	A	99.99.99.99
+test	IN	CNAME	sysninja.
