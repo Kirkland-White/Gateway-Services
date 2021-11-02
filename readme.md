@@ -81,6 +81,7 @@ You will get an error message after the installation but that is fine. Now we wa
 option domain-name ".sysninja";
 option domain-name-servers 10.0.0.250;
 option broadcast-address 10.0.0.255;
+option routers 10.0.0.250;
 default-lease-time 600;
 max-lease-time 7200;
 
