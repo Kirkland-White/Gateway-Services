@@ -187,7 +187,7 @@ Now we are going to configure Squid so that it will redirect from the website ht
 In the acl section of squid.conf, type this:
 
 
-acl localnet badsites dstdomain .neverssl.com
+acl badsites dstdomain .neverssl.com
 
 
 In the deny_info section, add this:
