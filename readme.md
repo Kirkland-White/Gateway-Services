@@ -1,5 +1,5 @@
 # Gateway Documentation
-This document will contain instructions on how to create a network appliance with an Ubuntu Server.
+This was a project for my OSYS 3030 class. This document will contain instructions on how to create a network appliance with an Ubuntu Server.
 Our network topology consists of a client, the network appliance we built running Ubuntu Server with 2 NICs (one for the internal network and one for external),
 and a connection to our ISP. The network appliance provides DNS services, DHCP services, Firewall Services and Proxy services.
 This Document will not cover OS install. The inward facing NIC on our server has an IP of 10.0.0.250 and the outward on is 192.168.0.12
